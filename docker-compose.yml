@@ -46,8 +46,7 @@ services:
     ports:
       - "5050:80"
     depends_on:
-      postgres:
-        condition: service_healthy
+      - postgres
     networks:
       - expense_net
 
@@ -69,8 +68,7 @@ services:
     ports:
       - "5000:5000"
     depends_on:
-      postgres:
-        condition: service_healthy
+      - postgres
     networks:
       - expense_net
 
