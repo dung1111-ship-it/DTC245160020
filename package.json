@@ -1,0 +1,30 @@
+{
+  "name": "expense-tracker-system",
+  "version": "1.0.0",
+  "description": "Hệ thống Quản lý Chi tiêu Cá nhân & Phân tích Tài chính - Đề 38 - Môn Triển khai và quản trị hệ thống phần mềm - SV: Trần Mạnh Dũng (DTC245160020 - K23.K1.KHMT K23A)",
+  "main": "run_dev.js",
+  "scripts": {
+    "start": "node run_dev.js",
+    "dev": "node run_dev.js",
+    "dev:all": "node run_dev.js",
+    "server": "cd server && node server.js",
+    "client": "cd client && npm run dev",
+    "build:client": "cd client && npm run build",
+    "test": "cd server && node test_api.js",
+    "seed": "cd server && node src/scripts/seed.js",
+    "slides": "start slides/index.html"
+  },
+  "keywords": [
+    "expense-tracker",
+    "react",
+    "vite",
+    "nodejs",
+    "express",
+    "sqlite",
+    "recharts",
+    "de-38",
+    "k23a"
+  ],
+  "author": "Trần Mạnh Dũng (DTC245160020)",
+  "license": "MIT"
+}

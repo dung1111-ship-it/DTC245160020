@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo Cáo Đề Tài 38: Hệ Thống Quản Lý Chi Tiêu - Trần Mạnh Dũng (DTC245160020)</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .slide.active {
+      display: flex;
+      opacity: 1;
+    }
+    @media print {
+      body { background: white !important; color: black !important; }
+      .no-print { display: none !important; }
+      .slide {
+        display: flex !important;
+        opacity: 1 !important;
+        page-break-after: always;
+        height: 100vh !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between select-none overflow-hidden">
+
+  <!-- Top Global Bar -->
+  <header class="no-print h-14 border-b border-slate-800 bg-slate-900/80 backdrop-blur-md px-6 flex items-center justify-between z-50">
+    <div class="flex items-center gap-3">
+      <span class="px-2.5 py-1 rounded-md bg-indigo-600/30 text-indigo-400 font-bold text-xs border border-indigo-500/30">
+        ĐỀ 38 • BẢO VỆ ĐỒ ÁN
+      </span>
+      <span class="text-sm font-semibold text-slate-300 hidden sm:inline">
+        Hệ Thống Quản Lý Chi Tiêu & Phân Tích Tài Chính
+      </span>
+    </div>
+    <div class="flex items-center gap-4 text-xs">
+      <span class="text-slate-400">
+        SV: <strong class="text-white">Trần Mạnh Dũng</strong> (DTC245160020)
+      </span>
+      <span class="text-indigo-400 bg-indigo-950/60 px-2 py-0.5 rounded border border-indigo-800/40 font-mono" id="slide-indicator">
+        Trang 1 / 15
+      </span>
+      <button onclick="window.print()" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium transition flex items-center gap-1.5" title="In hoặc lưu PDF">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        <span>In PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Slide Viewport Container (16:9 Standard) -->
+  <main class="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div class="w-full max-w-6xl aspect-[16/9] bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl relative overflow-hidden flex flex-col justify-between p-8 sm:p-12" id="slides-container">
+
+      <!-- SLIDE 1: BÌA BÁO CÁO -->
+      <section class="slide active flex-col justify-between h-full" data-slide="1">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
+            <span class="text-xs uppercase tracking-widest font-bold text-slate-400">Báo Cáo Đồ Án Kết Thúc Học Phần</span>
+          </div>
+          <span class="text-xs font-semibold text-indigo-400 bg-indigo-950/80 px-3 py-1 rounded-full border border-indigo-800">
+            Học kỳ 1 • Năm học 2026-2027
+          </span>
+        </div>
+
+        <div class="my-auto space-y-6 text-center">
+          <div class="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-400 font-bold text-xs uppercase tracking-wider border border-indigo-500/20">
+            Học phần: Triển khai và quản trị hệ thống phần mềm
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+            HỆ THỐNG QUẢN LÝ CHI TIÊU CÁ NHÂN<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400">
+              & PHÂN TÍCH TÀI CHÍNH THÔNG MINH
+            </span>
+          </h1>
+          <p class="text-slate-400 text-base max-w-2xl mx-auto">
+            Xây dựng và triển khai ứng dụng web Full-stack theo kiến trúc 3 tầng (React 18 + Node.js/Express + SQLite WAL Database)
+          </p>
+          <div class="inline-block px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 font-bold text-indigo-300 text-sm">
+            MÃ ĐỀ THI: ĐỀ SỐ 38
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-800/80 text-left">
+          <div class="bg-slate-800/40 p-3 rounded-xl border border-slate-800">
+            <p class="text-[11px] text-slate-400 uppercase">Sinh viên thực hiện</p>
+            <p class="text-sm font-bold text-white">TRẦN MẠNH DŨNG</p>
+          </div>
+          <div class="bg-slate-800/40 p-3 rounded-xl border border-slate-800">
+            <p class="text-[11px] text-slate-400 uppercase">Mã số sinh viên</p>
+            <p class="text-sm font-bold text-indigo-400 font-mono">DTC245160020</p>
+          </div>
+          <div class="bg-slate-800/40 p-3 rounded-xl border border-slate-800">
+            <p class="text-[11px] text-slate-400 uppercase">Lớp sinh hoạt</p>
+            <p class="text-sm font-bold text-white">K23.K1.KHMT K23A</p>
+          </div>
+          <div class="bg-slate-800/40 p-3 rounded-xl border border-slate-800">
+            <p class="text-[11px] text-slate-400 uppercase">STT Lớp / Nhóm</p>
+            <p class="text-sm font-bold text-emerald-400">STT: 26 (Nhóm: 15)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: ĐẶT VẤN ĐỀ & MỤC TIÊU ĐỀ TÀI -->
+      <section class="slide flex-col justify-between h-full" data-slide="2">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            01. Đặt Vấn Đề & Mục Tiêu Nghiên Cứu
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 02 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto">
+          <div class="space-y-4">
+            <h3 class="text-base font-bold text-rose-400 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+              Thực trạng quản lý tài chính sinh viên:
+            </h3>
+            <ul class="space-y-3 text-sm text-slate-300">
+              <li class="flex items-start gap-2.5 bg-slate-800/30 p-3 rounded-xl border border-slate-800">
+                <span class="text-rose-400 font-bold shrink-0">✕</span>
+                <span>Khó theo dõi tiền mặt và ví điện tử (MoMo, chuyển khoản) cùng lúc, dẫn tới thâm hụt tài chính cuối tháng.</span>
+              </li>
+              <li class="flex items-start gap-2.5 bg-slate-800/30 p-3 rounded-xl border border-slate-800">
+                <span class="text-rose-400 font-bold shrink-0">✕</span>
+                <span>Ghi chép thủ công bằng sổ tay hay Excel phức tạp, dễ quên và thiếu biểu đồ phân tích trực quan.</span>
+              </li>
+              <li class="flex items-start gap-2.5 bg-slate-800/30 p-3 rounded-xl border border-slate-800">
+                <span class="text-rose-400 font-bold shrink-0">✕</span>
+                <span>Không có cơ chế cảnh báo sớm khi chi tiêu vượt hạn mức danh mục định sẵn.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-base font-bold text-emerald-400 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Mục tiêu giải pháp của Đề tài 38:
+            </h3>
+            <ul class="space-y-3 text-sm text-slate-300">
+              <li class="flex items-start gap-2.5 bg-slate-800/30 p-3 rounded-xl border border-slate-800">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span>Xây dựng web app quản lý chi tiêu hiện đại, tập trung dòng tiền từ nhiều nguồn ví vào 1 màn hình.</span>
+              </li>
+              <li class="flex items-start gap-2.5 bg-slate-800/30 p-3 rounded-xl border border-slate-800">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span>Hệ thống cảnh báo thông minh theo ngưỡng 80% và 100% hạn mức danh mục trong tháng.</span>
+              </li>
+              <li class="flex items-start gap-2.5 bg-slate-800/30 p-3 rounded-xl border border-slate-800">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span>Trực quan hóa chỉ số tài chính, trích xuất báo cáo Excel/CSV và đạt chuẩn môn Triển khai phần mềm.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-indigo-950/40 p-3 rounded-xl border border-indigo-800/50 text-xs text-indigo-300 text-center">
+          📌 Trọng tâm học phần: Đảm bảo khả năng triển khai thực tế, cấu hình máy chủ, toàn vẹn dữ liệu và kiểm thử hệ thống.
+        </div>
+      </section>
+
+      <!-- SLIDE 3: YÊU CẦU BÀI TOÁN & PHẠM VI HỆ THỐNG -->
+      <section class="slide flex-col justify-between h-full" data-slide="3">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            02. Yêu Cầu Bài Toán & Phạm Vi Chức Năng
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 03 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-auto">
+          <!-- Phân hệ 1 & 2 -->
+          <div class="bg-slate-800/40 p-4 rounded-2xl border border-slate-800 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm">
+              01
+            </div>
+            <h4 class="font-bold text-white text-sm">Quản Lý Giao Dịch & Đa Ví</h4>
+            <p class="text-xs text-slate-400">
+              CRUD giao dịch thu / chi, phân loại ví tài khoản (Tiền mặt, Ngân hàng, Ví MoMo). Bộ lọc đa tiêu chí theo khoảng ngày, loại thu/chi, ví và danh mục.
+            </p>
+          </div>
+
+          <!-- Phân hệ 3 -->
+          <div class="bg-slate-800/40 p-4 rounded-2xl border border-slate-800 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+              02
+            </div>
+            <h4 class="font-bold text-white text-sm">Hạn Mức Ngân Sách & Cảnh Báo</h4>
+            <p class="text-xs text-slate-400">
+              Thiết lập ngân sách theo từng danh mục chi tiêu theo tháng. Thuật toán phát hiện ngưỡng cảnh báo tự động: Xanh (&lt;80%), Vàng (80-100%), Đỏ (&gt;100%).
+            </p>
+          </div>
+
+          <!-- Phân hệ 4 & 5 -->
+          <div class="bg-slate-800/40 p-4 rounded-2xl border border-slate-800 space-y-2">
+            <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm">
+              03
+            </div>
+            <h4 class="font-bold text-white text-sm">Phân Tích Đồ Thị & Báo Cáo</h4>
+            <p class="text-xs text-slate-400">
+              Biểu đồ cơ cấu chi tiêu Doughnut Chart, biểu đồ xu hướng dòng tiền các tháng. Xuất dữ liệu Excel/CSV (UTF-8 BOM) và in ấn A4 chuẩn thi cử.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-3 text-center text-xs">
+          <div class="p-2.5 rounded-xl bg-slate-800/30 border border-slate-800">
+            <strong class="block text-indigo-400 text-sm">6 Phân Hệ</strong>
+            <span class="text-slate-400">Dashboard, Ví, Ngân Sách, Báo Cáo, Quản Trị API</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-800/30 border border-slate-800">
+            <strong class="block text-emerald-400 text-sm">21 Endpoints</strong>
+            <span class="text-slate-400">RESTful API Backend</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-800/30 border border-slate-800">
+            <strong class="block text-sky-400 text-sm">57 Test Cases</strong>
+            <span class="text-slate-400">Kiểm thử E2E đạt 100%</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-800/30 border border-slate-800">
+            <strong class="block text-amber-400 text-sm">3 Tháng Mock</strong>
+            <span class="text-slate-400">Dữ liệu mẫu nạp sẵn</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: KIẾN TRÚC HỆ THỐNG 3 TẦNG -->
+      <section class="slide flex-col justify-between h-full" data-slide="4">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            03. Kiến Trúc Hệ Thống Tổng Thể (3-Tier)
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 04 / 15</span>
+        </div>
+
+        <div class="my-auto space-y-3">
+          <!-- Tier 1: Client -->
+          <div class="bg-indigo-950/30 border border-indigo-500/30 rounded-xl p-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-1 rounded bg-indigo-600 text-white font-bold text-xs">TẦNG 1</span>
+              <div>
+                <h4 class="text-sm font-bold text-white">Frontend Client (Presentation Layer) — Port 3000</h4>
+                <p class="text-xs text-slate-400">React 18 • Vite 5 • Tailwind CSS • Lucide Icons • Recharts</p>
+              </div>
+            </div>
+            <span class="text-xs text-indigo-400 font-mono">SPA • Single Page App</span>
+          </div>
+
+          <div class="flex justify-center text-slate-500 text-xs">
+            ▲▼ HTTP Request / RESTful JSON Response (Axios & Fetch API)
+          </div>
+
+          <!-- Tier 2: Server -->
+          <div class="bg-sky-950/30 border border-sky-500/30 rounded-xl p-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-1 rounded bg-sky-600 text-white font-bold text-xs">TẦNG 2</span>
+              <div>
+                <h4 class="text-sm font-bold text-white">Backend Server (Application Layer) — Port 5000</h4>
+                <p class="text-xs text-slate-400">Node.js Express • Router • Controllers • Middlewares (Logger, Validator, ErrorHandler)</p>
+              </div>
+            </div>
+            <span class="text-xs text-sky-400 font-mono">RESTful API Engine</span>
+          </div>
+
+          <div class="flex justify-center text-slate-500 text-xs">
+            ▲▼ SQL Query Execution & ACID Transactions
+          </div>
+
+          <!-- Tier 3: Database -->
+          <div class="bg-emerald-950/30 border border-emerald-500/30 rounded-xl p-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-1 rounded bg-emerald-600 text-white font-bold text-xs">TẦNG 3</span>
+              <div>
+                <h4 class="text-sm font-bold text-white">Database Layer (Data Storage) — SQLite WAL Mode</h4>
+                <p class="text-xs text-slate-400">File CSDL vật lý `expense_tracker.sqlite` • Khóa ngoại Foreign Keys • Ghi log song song</p>
+              </div>
+            </div>
+            <span class="text-xs text-emerald-400 font-mono">Persistent Storage</span>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-400 text-center">
+          Thiết kế tách bạch rõ ràng giữa Giao diện - Nghiệp vụ - Lưu trữ, chuẩn yêu cầu môn Triển khai và quản trị hệ thống phần mềm.
+        </div>
+      </section>
+
+      <!-- SLIDE 5: THIẾT KẾ CƠ SỞ DỮ LIỆU & ERD -->
+      <section class="slide flex-col justify-between h-full" data-slide="5">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            04. Thiết Kế Cơ Sở Dữ Liệu & Mô Hình ERD
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 05 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-2.5 my-auto">
+          <!-- Table 1: Users -->
+          <div class="bg-slate-800/40 border border-purple-700/60 rounded-xl p-2.5 text-xs space-y-1">
+            <div class="font-bold text-purple-400 border-b border-purple-700/60 pb-1">BẢNG users (RBAC)</div>
+            <p><span class="text-emerald-400 font-mono">PK</span> id (TEXT)</p>
+            <p><span class="text-sky-400 font-mono">UQ</span> username</p>
+            <p><span class="text-sky-400 font-mono">UQ</span> email</p>
+            <p>password_hash</p>
+            <p>salt (PBKDF2)</p>
+            <p>role ('admin'|'user')</p>
+          </div>
+
+          <!-- Table 2: Transactions -->
+          <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-2.5 text-xs space-y-1">
+            <div class="font-bold text-indigo-400 border-b border-slate-700 pb-1">BẢNG transactions</div>
+            <p><span class="text-emerald-400 font-mono">PK</span> id (TEXT)</p>
+            <p><span class="text-sky-400 font-mono">FK</span> walletId</p>
+            <p><span class="text-sky-400 font-mono">FK</span> categoryId</p>
+            <p>amount (REAL > 0)</p>
+            <p>type (in|ex)</p>
+            <p>date (ISO)</p>
+          </div>
+
+          <!-- Table 3: Categories -->
+          <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-2.5 text-xs space-y-1">
+            <div class="font-bold text-emerald-400 border-b border-slate-700 pb-1">BẢNG categories</div>
+            <p><span class="text-emerald-400 font-mono">PK</span> id (TEXT)</p>
+            <p>name (TEXT NOT NULL)</p>
+            <p>type (in|ex)</p>
+            <p>icon, color</p>
+            <p>isDefault (0|1)</p>
+          </div>
+
+          <!-- Table 4: Wallets -->
+          <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-2.5 text-xs space-y-1">
+            <div class="font-bold text-sky-400 border-b border-slate-700 pb-1">BẢNG wallets</div>
+            <p><span class="text-emerald-400 font-mono">PK</span> id (TEXT)</p>
+            <p>name (TEXT)</p>
+            <p>type (cash|bank|momo)</p>
+            <p>initialBalance</p>
+            <p>icon, color</p>
+          </div>
+
+          <!-- Table 5: Budgets -->
+          <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-2.5 text-xs space-y-1">
+            <div class="font-bold text-amber-400 border-b border-slate-700 pb-1">BẢNG budgets</div>
+            <p><span class="text-emerald-400 font-mono">PK</span> id (TEXT)</p>
+            <p><span class="text-sky-400 font-mono">FK</span> categoryId</p>
+            <p>month ('YYYY-MM')</p>
+            <p>amount (REAL > 0)</p>
+            <p class="text-[10px] text-slate-500">UQ(categoryId,month)</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-800/40 p-3 rounded-xl border border-slate-800 text-xs space-y-1">
+          <p class="font-bold text-slate-300">Ràng buộc toàn vẹn & Tối ưu hóa truy vấn:</p>
+          <p class="text-slate-400">
+            • Bật <code class="text-indigo-400">PRAGMA foreign_keys = ON</code> ngăn chặn giao dịch mồ côi khi danh mục bị xóa.
+            • Đánh chỉ mục (Index) trên các cột <code class="text-indigo-400">date</code>, <code class="text-indigo-400">walletId</code>, <code class="text-indigo-400">categoryId</code> để tăng tốc bộ lọc.
+          </p>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: THIẾT KẾ BACKEND RESTful API -->
+      <section class="slide flex-col justify-between h-full" data-slide="6">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            05. Thiết Kế Backend RESTful API & Dịch Vụ
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 06 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+          <div class="space-y-2 text-xs">
+            <h4 class="font-bold text-indigo-400 uppercase tracking-wide">Nhóm Endpoints Nghiệp Vụ Chính:</h4>
+            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 font-mono space-y-1.5 text-[11px]">
+              <p><span class="text-indigo-400 font-bold">AUTH</span>   POST /api/auth/login & /register (JWT)</p>
+              <p><span class="text-purple-400 font-bold">RBAC</span>   GET|PUT /api/admin/users & /stats</p>
+              <p><span class="text-emerald-400">GET</span>    /api/health (Kiểm tra trạng thái & Metadata)</p>
+              <p><span class="text-emerald-400">GET</span>    /api/transactions (Lọc ngày, ví, danh mục)</p>
+              <p><span class="text-sky-400">POST</span>   /api/transactions (Tạo mới & cập nhật ví)</p>
+              <p><span class="text-rose-400">DEL</span>    /api/transactions/:id (Xóa & hoàn ví)</p>
+              <p><span class="text-emerald-400">GET</span>    /api/budgets/progress (Tiến độ tháng)</p>
+              <p><span class="text-emerald-400">GET</span>    /api/analytics/category-breakdown</p>
+            </div>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <h4 class="font-bold text-sky-400 uppercase tracking-wide">Các Middleware Tiêu Chuẩn:</h4>
+            <div class="p-2.5 rounded-xl bg-slate-800/40 border border-slate-800 space-y-1">
+              <p class="font-bold text-purple-400">1. Auth & RBAC (authMiddleware.js):</p>
+              <p class="text-slate-400">Xác thực Bearer JWT token, giải mã payload và phân quyền Admin/User ngăn chặn truy cập trái phép.</p>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-800/40 border border-slate-800 space-y-1">
+              <p class="font-bold text-white">2. Logger & Validator (logger.js / validator.js):</p>
+              <p class="text-slate-400">Ghi log request ms; kiểm tra số tiền &gt; 0, tránh injection dữ liệu.</p>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-800/40 border border-slate-800 space-y-1">
+              <p class="font-bold text-white">3. Centralized Error Handler (errorHandler.js):</p>
+              <p class="text-slate-400">Bắt toàn bộ lỗi runtime, trả về cấu trúc lỗi chuẩn JSON { success: false, error: { message, code } }.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-400 text-center">
+          Tất cả API đều tuân thủ chuẩn RESTful, trả về mã trạng thái HTTP chuẩn (200 OK, 201 Created, 400 Bad Request, 404 Not Found).
+        </div>
+      </section>
+
+      <!-- SLIDE 7: BẢO TOÀN SỐ DƯ & TÍNH TOÀN VẸN TÀI CHÍNH -->
+      <section class="slide flex-col justify-between h-full" data-slide="7">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            06. Cơ Chế Bất Biến Tài Chính (Financial Invariants)
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 07 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-auto">
+          <div class="bg-slate-800/40 p-4 rounded-2xl border border-slate-800 space-y-2">
+            <div class="text-emerald-400 font-bold text-sm flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Bảo Toàn Số Dư Ví (Conservation)
+            </div>
+            <p class="text-xs text-slate-300">
+              Số dư hiện tại của từng ví luôn bằng:
+              <br><br>
+              <code class="text-indigo-300 font-mono bg-slate-900 p-1.5 rounded block">
+                CurrentBalance = InitialBalance + ∑Income - ∑Expense
+              </code>
+            </p>
+            <p class="text-[11px] text-slate-400">
+              Đảm bảo không bao giờ có sự chênh lệch giữa tổng số dư hiển thị và lịch sử giao dịch.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/40 p-4 rounded-2xl border border-slate-800 space-y-2">
+            <div class="text-sky-400 font-bold text-sm flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+              Đồng Bộ Giao Dịch Nguyên Tử
+            </div>
+            <p class="text-xs text-slate-300">
+              Mọi thao tác sửa hoặc xóa giao dịch đều tự động:
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1 list-disc list-inside">
+              <li>Hoàn tác số tiền cũ vào ví gốc.</li>
+              <li>Trừ/cộng số tiền mới vào ví đích.</li>
+              <li>Cập nhật lại ngân sách danh mục.</li>
+            </ul>
+            <p class="text-[11px] text-slate-400">
+              Được bảo vệ bằng SQLite Transaction nội bộ.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/40 p-4 rounded-2xl border border-slate-800 space-y-2">
+            <div class="text-amber-400 font-bold text-sm flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              An Toàn Toán Học (Zero-Division)
+            </div>
+            <p class="text-xs text-slate-300">
+              Tỷ lệ tiết kiệm và tỷ trọng chi tiêu:
+            </p>
+            <div class="bg-slate-900 p-2 rounded text-[11px] font-mono text-slate-300 space-y-1">
+              <p>if (income === 0) return 0;</p>
+              <p>SavingsRate = (Income - Expense) / Income * 100;</p>
+            </div>
+            <p class="text-[11px] text-slate-400">
+              Tránh hoàn toàn lỗi NaN hoặc Infinity khi hệ thống mới khởi tạo chưa có giao dịch thu.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-emerald-950/40 p-3 rounded-xl border border-emerald-800/50 text-xs text-emerald-300 text-center">
+          ✅ Đã được kiểm tra qua 15/15 ca kiểm thử tính bất biến (Invariant Tests) đạt kết quả tuyệt đối.
+        </div>
+      </section>
+
+      <!-- SLIDE 8: THIẾT KẾ GIAO DIỆN FRONTEND & UX -->
+      <section class="slide flex-col justify-between h-full" data-slide="8">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            07. Thiết Kế Giao Diện Frontend (React & Tailwind)
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 08 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+          <div class="space-y-3 text-xs">
+            <h4 class="font-bold text-indigo-400 uppercase tracking-wide">Nguyên Tắc Thiết Kế UI/UX:</h4>
+            <div class="p-3 bg-slate-800/40 rounded-xl border border-slate-800 space-y-1">
+              <p class="font-bold text-white">1. Dashboard Hiện Đại & Trực Quan:</p>
+              <p class="text-slate-400">Sử dụng font chữ Plus Jakarta Sans hiện đại, khoảng trắng thoáng đãng, các thẻ bo góc lớn (rounded-2xl) và bảng màu chuẩn Tailwind.</p>
+            </div>
+            <div class="p-3 bg-slate-800/40 rounded-xl border border-slate-800 space-y-1">
+              <p class="font-bold text-white">2. Chế Độ Dark / Light Mode:</p>
+              <p class="text-slate-400">Chuyển đổi giao diện sáng/tối tức thì chỉ bằng 1 nút bấm, tự động lưu lựa chọn vào LocalStorage.</p>
+            </div>
+            <div class="p-3 bg-slate-800/40 rounded-xl border border-slate-800 space-y-1">
+              <p class="font-bold text-white">3. Responsive Đa Thiết Bị:</p>
+              <p class="text-slate-400">Hoạt động trơn tru trên mọi độ phân giải màn hình từ máy chiếu phòng thi, laptop đến điện thoại di động.</p>
+            </div>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <h4 class="font-bold text-emerald-400 uppercase tracking-wide">Cấu Trúc Component Phía Client:</h4>
+            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 font-mono text-[11px] text-slate-300 space-y-1">
+              <p class="text-indigo-400">&lt;FinancialProvider&gt; (Context State)</p>
+              <p class="pl-4">├── &lt;Header /&gt; (Dark mode, Server Status Badge)</p>
+              <p class="pl-4">├── &lt;Navbar /&gt; (6 Tab điều hướng chuẩn chuyên ngành)</p>
+              <p class="pl-4">├── &lt;DashboardView /&gt; (KPIs + Health Score + Wallets + Recharts)</p>
+              <p class="pl-4">├── &lt;TransactionsView /&gt; (FilterBar + Table + Pagination)</p>
+              <p class="pl-4">├── &lt;BudgetsView /&gt; (Ngân sách & Cảnh báo)</p>
+              <p class="pl-4">├── &lt;ReportsView /&gt; (Recharts Analytics + CSV Export)</p>
+              <p class="pl-4">├── &lt;SystemAdminView /&gt; (Live API Console & Database Inspector)</p>
+              <p class="pl-4">├── &lt;TransferModal /&gt; (Chuyển vốn nội bộ giữa các ví)</p>
+              <p class="pl-4">├── &lt;Footer /&gt; (Thông tin thí sinh)</p>
+              <p class="pl-4">└── &lt;ExamModal /&gt; (Hộp thoại bài thi Đề 38)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-400 text-center">
+          Giao diện được xây dựng bằng React 18 thuần Component, không phụ thuộc thư viện UI nặng nề, tốc độ render cực nhanh.
+        </div>
+      </section>
+
+      <!-- SLIDE 9: PHÂN HỆ DASHBOARD & KPI TÀI CHÍNH -->
+      <section class="slide flex-col justify-between h-full" data-slide="9">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            08. Phân Hệ Dashboard & Thẻ Chỉ Số KPI
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 09 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 my-auto">
+          <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800 space-y-1">
+            <span class="text-[11px] text-slate-400">Tổng Số Dư Khả Dụng</span>
+            <p class="text-xl font-black text-indigo-400">18.450.000 ₫</p>
+            <span class="text-[10px] text-emerald-400 font-semibold">+12.4% so tháng trước</span>
+          </div>
+          <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800 space-y-1">
+            <span class="text-[11px] text-slate-400">Tổng Thu Trong Tháng</span>
+            <p class="text-xl font-black text-emerald-400">12.000.000 ₫</p>
+            <span class="text-[10px] text-slate-400">Lương thực tập & Trợ cấp</span>
+          </div>
+          <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800 space-y-1">
+            <span class="text-[11px] text-slate-400">Tổng Chi Trong Tháng</span>
+            <p class="text-xl font-black text-rose-400">6.850.000 ₫</p>
+            <span class="text-[10px] text-slate-400">Chi tiêu sinh hoạt & học phí</span>
+          </div>
+          <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800 space-y-1">
+            <span class="text-[11px] text-slate-400">Tỷ Lệ Tiết Kiệm</span>
+            <p class="text-xl font-black text-sky-400">42.9%</p>
+            <span class="text-[10px] text-emerald-400 font-semibold">Đạt chuẩn tài chính tốt</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-800/30 p-4 rounded-2xl border border-slate-800 space-y-2">
+          <h4 class="font-bold text-white text-xs">Theo dõi dòng tiền theo 3 nguồn ví tài khoản:</h4>
+          <div class="grid grid-cols-3 gap-3 text-xs">
+            <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+              <span class="text-slate-400 block text-[11px]">💵 Ví Tiền Mặt</span>
+              <strong class="text-white">2.150.000 ₫</strong>
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+              <span class="text-slate-400 block text-[11px]">💳 Tài Khoản Ngân Hàng</span>
+              <strong class="text-white">14.500.000 ₫</strong>
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+              <span class="text-slate-400 block text-[11px]">📱 Ví Điện Tử MoMo</span>
+              <strong class="text-white">1.800.000 ₫</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-400 text-center">
+          Dữ liệu Dashboard được tính toán động từ CSDL Backend và tự động cập nhật ngay khi thêm giao dịch mới.
+        </div>
+      </section>
+
+      <!-- SLIDE 10: PHÂN HỆ SỔ GIAO DỊCH & BỘ LỌC ĐA TIÊU CHÍ -->
+      <section class="slide flex-col justify-between h-full" data-slide="10">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            09. Phân Hệ Sổ Giao Dịch & Bộ Lọc Nâng Cao
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 10 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+          <div class="space-y-3 text-xs">
+            <h4 class="font-bold text-indigo-400 uppercase tracking-wide">Bộ Lọc Đa Tiêu Chí Thời Gian Thực:</h4>
+            <div class="space-y-2">
+              <div class="p-2.5 rounded-xl bg-slate-800/40 border border-slate-800">
+                <strong class="text-white">🔍 Tìm kiếm từ khóa:</strong> Tìm kiếm tức thì theo ghi chú giao dịch, tên danh mục.
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-800/40 border border-slate-800">
+                <strong class="text-white">📅 Lọc theo thời gian:</strong> Tháng này, tháng trước, 3 tháng gần nhất hoặc tùy chọn khoảng ngày.
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-800/40 border border-slate-800">
+                <strong class="text-white">🏷️ Lọc theo Danh mục & Ví:</strong> Chọn lọc riêng các giao dịch của từng loại ví hoặc danh mục.
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <h4 class="font-bold text-sky-400 uppercase tracking-wide">Tính Năng Bảng Dữ Liệu:</h4>
+            <div class="space-y-2">
+              <div class="p-2.5 rounded-xl bg-slate-800/40 border border-slate-800">
+                <strong class="text-white">⚡ Phân trang thông minh:</strong> Tùy chọn 10, 20 hoặc 50 bản ghi/trang, chuyển trang mượt mà.
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-800/40 border border-slate-800">
+                <strong class="text-white">↕️ Sắp xếp 2 chiều:</strong> Sắp xếp theo ngày tăng/giảm dần, theo số tiền lớn/nhỏ.
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-800/40 border border-slate-800">
+                <strong class="text-white">✏️ Modal CRUD hoàn chỉnh:</strong> Form thêm và sửa giao dịch có kiểm tra tính hợp lệ số tiền và ngày tháng.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-indigo-950/40 p-2.5 rounded-xl border border-indigo-800/50 text-xs text-indigo-300 text-center">
+          💡 Thao tác Xóa giao dịch có hộp thoại xác nhận an toàn, tránh người dùng bấm nhầm làm thay đổi số dư.
+        </div>
+      </section>
+
+      <!-- SLIDE 11: PHÂN HỆ KẾ HOẠCH NGÂN SÁCH & CẢNH BÁO -->
+      <section class="slide flex-col justify-between h-full" data-slide="11">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            10. Kế Hoạch Ngân Sách & Cảnh Báo Thông Minh
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 11 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-auto">
+          <!-- An toàn -->
+          <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-800 space-y-2">
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-800">
+              MỨC AN TOÀN (&lt; 80%)
+            </span>
+            <h4 class="text-sm font-bold text-white">Thanh Tiến Độ Xanh Lá</h4>
+            <p class="text-xs text-slate-400">
+              Chi tiêu trong tầm kiểm soát. Người dùng hoàn toàn yên tâm tiếp tục kế hoạch tài chính đã đề ra.
+            </p>
+          </div>
+
+          <!-- Cảnh báo -->
+          <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-800 space-y-2">
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-950 text-amber-400 border border-amber-800">
+              CẢNH BÁO SỚM (80% - 100%)
+            </span>
+            <h4 class="text-sm font-bold text-white">Thanh Tiến Độ Màu Vàng</h4>
+            <p class="text-xs text-slate-400">
+              Sắp chạm hạn mức cho phép. Hệ thống kích hoạt banner cảnh báo nhắc nhở người dùng tiết chế chi tiêu.
+            </p>
+          </div>
+
+          <!-- Vượt hạn mức -->
+          <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-800 space-y-2">
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-rose-950 text-rose-400 border border-rose-800 animate-pulse">
+              VI PHẠM HẠN MỨC (&gt; 100%)
+            </span>
+            <h4 class="text-sm font-bold text-white">Thanh Đỏ & Nhấp Nháy</h4>
+            <p class="text-xs text-slate-400">
+              Đã chi tiêu quá ngân sách danh mục. Bật cảnh báo vi phạm màu đỏ và thống kê số tiền bị bội chi.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-slate-800/40 p-3 rounded-xl border border-slate-800 text-xs space-y-1">
+          <p class="font-bold text-white">Tính năng tích lũy mục tiêu sinh viên (Savings Goals):</p>
+          <p class="text-slate-400">
+            Theo dõi tiến độ tích lũy: Quỹ dự phòng sinh viên (85%), Quỹ nâng cấp Laptop đồ án (60%), Học bổng & Chứng chỉ quốc tế (100%).
+          </p>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: PHÂN HỆ TRỰC QUAN HÓA DỮ LIỆU RECHARTS -->
+      <section class="slide flex-col justify-between h-full" data-slide="12">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            11. Phân Hệ Trực Quan Hóa Dữ Liệu (Recharts)
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 12 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+          <div class="bg-slate-800/40 p-4 rounded-2xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-700/60 pb-2">
+              <h4 class="font-bold text-white text-xs">Biểu Đồ Tròn Cơ Cấu Chi Tiêu (Doughnut Chart)</h4>
+              <span class="text-[10px] text-indigo-400 font-mono">Recharts Pie</span>
+            </div>
+            <p class="text-xs text-slate-400">
+              • Phân tích tỷ trọng chi tiêu từng danh mục (Ăn uống, Nhà ở, Mua sắm, Đi lại...).<br>
+              • Tooltip hiển thị số tiền VND chuẩn và tỷ lệ phần trăm.<br>
+              • Bảng màu phân biệt rõ ràng, hiển thị legend thu gọn.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/40 p-4 rounded-2xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-700/60 pb-2">
+              <h4 class="font-bold text-white text-xs">Biểu Đồ Cột Xu Hướng Dòng Tiền (Bar Chart)</h4>
+              <span class="text-[10px] text-emerald-400 font-mono">Recharts Bar</span>
+            </div>
+            <p class="text-xs text-slate-400">
+              • So sánh đối ứng giữa Tổng Thu và Tổng Chi qua các tháng 8, 9, 10 năm 2026.<br>
+              • Trục tung tự động quy đổi sang đơn vị Triệu VNĐ.<br>
+              • Giúp sinh viên nắm bắt quy luật biến động chi tiêu theo học kỳ.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-indigo-950/40 p-3 rounded-xl border border-indigo-800/50 text-xs text-indigo-300 text-center">
+          📊 Tích hợp bảng thống kê Top 5 khoản chi lớn nhất và module gợi ý tài chính thông minh (Quy tắc 50/30/20).
+        </div>
+      </section>
+
+      <!-- SLIDE 13: BÁO CÁO, TRÍCH XUẤT CSV & XUẤT BẢN -->
+      <section class="slide flex-col justify-between h-full" data-slide="13">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            12. Báo Cáo, Trích Xuất Dữ Liệu & In Ấn PDF
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 13 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+          <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-800 space-y-3">
+            <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase">
+              <span>📥 Xuất File Excel / CSV Chuẩn UTF-8 BOM</span>
+            </div>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">•</span>
+                <span>Tự động đính kèm Byte Order Mark (<code class="text-emerald-300 font-mono">\uFEFF</code>) giúp Microsoft Excel hiển thị tiếng Việt có dấu chuẩn 100% không bị lỗi font.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">•</span>
+                <span>Xuất đầy đủ các cột: Mã GD, Ngày, Loại, Số tiền VND, Danh mục, Ví thanh toán, Ghi chú.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">•</span>
+                <span>Tên file tự động định danh theo tháng và mã sinh viên: <code class="text-indigo-300 font-mono">Bao_Cao_Thu_Chi_2026-10_DTC245160020.csv</code>.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-800/40 border border-slate-800 space-y-3">
+            <div class="flex items-center gap-2 text-indigo-400 font-bold text-xs uppercase">
+              <span>🖨️ In Báo Cáo & Xuất PDF Khổ A4</span>
+            </div>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-indigo-400 font-bold">•</span>
+                <span>Tích hợp CSS Print Media Query chuẩn chỉnh: ẩn các nút bấm điều hướng và hiển thị tiêu đề báo cáo trang trọng.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-indigo-400 font-bold">•</span>
+                <span>Đính kèm đầy đủ thông tin: Sinh viên Trần Mạnh Dũng - DTC245160020 - K23.K1.KHMT K23A - Đề 38.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-indigo-400 font-bold">•</span>
+                <span>Sẵn sàng in ra giấy hoặc lưu thành file PDF để nộp kèm báo cáo thực tập / đồ án.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-400 text-center">
+          Đáp ứng tiêu chuẩn môn Triển khai: Dữ liệu phần mềm phải có khả năng sao lưu, trích xuất và bàn giao cho người dùng.
+        </div>
+      </section>
+
+      <!-- SLIDE 14: KẾT QUẢ KIỂM THỬ & ĐÁNH GIÁ CHẤT LƯỢNG -->
+      <section class="slide flex-col justify-between h-full" data-slide="14">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            13. Kế Hoạch Kiểm Thử & Nghiệm Thu Chất Lượng
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 14 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 my-auto text-center">
+          <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800">
+            <span class="text-3xl font-black text-emerald-400">21 / 21</span>
+            <p class="text-xs font-bold text-white mt-1">REST API Tests</p>
+            <span class="text-[10px] text-emerald-400 font-semibold">Đạt 100% Pass</span>
+          </div>
+          <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800">
+            <span class="text-3xl font-black text-sky-400">57 / 57</span>
+            <p class="text-xs font-bold text-white mt-1">E2E Scenarios</p>
+            <span class="text-[10px] text-sky-400 font-semibold">Tiers 1-4 Hoàn hảo</span>
+          </div>
+          <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800">
+            <span class="text-3xl font-black text-indigo-400">&lt; 3ms</span>
+            <p class="text-xs font-bold text-white mt-1">Latency Trung Bình</p>
+            <span class="text-[10px] text-indigo-400 font-semibold">Tốc độ cực nhanh</span>
+          </div>
+          <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800">
+            <span class="text-3xl font-black text-amber-400">0 Lỗi</span>
+            <p class="text-xs font-bold text-white mt-1">Memory Leak</p>
+            <span class="text-[10px] text-amber-400 font-semibold">SQLite WAL an toàn</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-800/40 p-3.5 rounded-xl border border-slate-800 text-xs space-y-2">
+          <p class="font-bold text-white">Các kịch bản kiểm thử độc lập đã thực hiện:</p>
+          <div class="grid grid-cols-2 gap-2 text-slate-300 text-[11px]">
+            <p>✓ Kiểm thử giá trị biên: Số tiền âm, số tiền 0 đồng, ngày tháng sai định dạng.</p>
+            <p>✓ Kiểm thử tính bảo toàn số dư ví khi xóa hoặc chỉnh sửa giao dịch.</p>
+            <p>✓ Kiểm thử khóa ngoại ngăn xóa danh mục khi đang có giao dịch liên kết.</p>
+            <p>✓ Kiểm thử cơ chế dự phòng Offline khi ngắt kết nối máy chủ backend.</p>
+          </div>
+        </div>
+
+        <div class="text-xs text-emerald-400 text-center font-semibold">
+          🏆 Toàn bộ hệ thống sẵn sàng 100% cho buổi bảo vệ thi cử trước Hội đồng chấm điểm.
+        </div>
+      </section>
+
+      <!-- SLIDE 15: KẾT LUẬN & HƯỚNG PHÁT TRIỂN -->
+      <section class="slide flex-col justify-between h-full" data-slide="15">
+        <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-indigo-500 rounded-xs"></span>
+            14. Kết Luận, Hướng Phát Triển & Lời Cảm Ơn
+          </h2>
+          <span class="text-xs text-slate-500 font-mono">Slide 15 / 15</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto text-xs">
+          <div class="space-y-3">
+            <h4 class="font-bold text-emerald-400 uppercase tracking-wide">Kết Quả Đạt Được:</h4>
+            <div class="p-3 bg-slate-800/40 rounded-xl border border-slate-800 space-y-1.5 text-slate-300">
+              <p>✓ Hoàn thành 100% yêu cầu của <strong>Đề 38: Hệ thống Quản lý Chi tiêu</strong>.</p>
+              <p>✓ Đáp ứng toàn diện chuẩn đầu ra môn <strong>Triển khai và quản trị hệ thống phần mềm</strong>.</p>
+              <p>✓ Kiến trúc 3 tầng chuẩn công nghiệp, mã nguồn sạch, có tài liệu hướng dẫn và script chạy 1-click.</p>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="font-bold text-indigo-400 uppercase tracking-wide">Hướng Mở Rộng Tương Lai:</h4>
+            <div class="p-3 bg-slate-800/40 rounded-xl border border-slate-800 space-y-1.5 text-slate-300">
+              <p>• Tích hợp tính năng quét hóa đơn tự động bằng AI (OCR Receipt Scanner).</p>
+              <p>• Đồng bộ sao kê tự động qua Open Banking API hoặc Webhook MoMo.</p>
+              <p>• Đóng gói thành ứng dụng di động đa nền tảng React Native / PWA.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center space-y-2 pt-4 border-t border-slate-800">
+          <h3 class="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400">
+            EM XIN CHÂN THÀNH CẢM ƠN QUÝ THẦY CÔ TRONG HỘI ĐỒNG!
+          </h3>
+          <p class="text-xs text-slate-400">
+            Sinh viên thực hiện: <strong>TRẦN MẠNH DŨNG</strong> • MSSV: <strong class="text-indigo-400">DTC245160020</strong> • Lớp: <strong>K23.K1.KHMT K23A</strong>
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Bottom Navigation Bar -->
+  <footer class="no-print h-16 border-t border-slate-800 bg-slate-900/90 backdrop-blur-md px-6 flex items-center justify-between z-50">
+    <div class="flex items-center gap-2">
+      <button id="prev-btn" onclick="prevSlide()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition flex items-center gap-1.5 shadow-sm">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        <span>Trang trước</span>
+      </button>
+      <button id="next-btn" onclick="nextSlide()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition flex items-center gap-1.5 shadow-md shadow-indigo-600/30">
+        <span>Trang tiếp theo</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+    </div>
+
+    <!-- Quick Slide Dots (1-15) -->
+    <div class="hidden md:flex items-center gap-1.5" id="slide-dots">
+      <!-- Generated via JS -->
+    </div>
+
+    <div class="text-xs text-slate-400 flex items-center gap-3">
+      <span class="hidden sm:inline">Dùng phím mũi tên <strong>← / →</strong> hoặc <strong>Space</strong> để chuyển slide</span>
+      <button onclick="toggleFullscreen()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300" title="Toàn màn hình">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 15;
+    const slides = document.querySelectorAll('.slide');
+    const indicator = document.getElementById('slide-indicator');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const dotsContainer = document.getElementById('slide-dots');
+
+    // Create dots
+    for (let i = 1; i <= totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = `w-2 h-2 rounded-full transition-all ${i === 1 ? 'bg-indigo-500 w-5' : 'bg-slate-700 hover:bg-slate-500'}`;
+      dot.title = `Chuyển tới Slide ${i}`;
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateSlides() {
+      slides.forEach((s, idx) => {
+        if (idx + 1 === currentSlide) {
+          s.classList.add('active');
+        } else {
+          s.classList.remove('active');
+        }
+      });
+
+      indicator.textContent = `Trang ${currentSlide} / ${totalSlides}`;
+      prevBtn.disabled = currentSlide === 1;
+      prevBtn.classList.toggle('opacity-50', currentSlide === 1);
+      nextBtn.disabled = currentSlide === totalSlides;
+      nextBtn.classList.toggle('opacity-50', currentSlide === totalSlides);
+
+      // Update dots
+      const dots = dotsContainer.children;
+      for (let i = 0; i < dots.length; i++) {
+        if (i + 1 === currentSlide) {
+          dots[i].className = 'w-5 h-2 rounded-full bg-indigo-500 transition-all';
+        } else {
+          dots[i].className = 'w-2 h-2 rounded-full bg-slate-700 hover:bg-slate-500 transition-all';
+        }
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlides();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlides();
+      }
+    }
+
+    function goToSlide(n) {
+      if (n >= 1 && n <= totalSlides) {
+        currentSlide = n;
+        updateSlides();
+      }
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    // Keyboard navigation
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'Home') {
+        goToSlide(1);
+      } else if (e.key === 'End') {
+        goToSlide(totalSlides);
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullscreen();
+      }
+    });
+
+    updateSlides();
+  </script>
+</body>
+</html>

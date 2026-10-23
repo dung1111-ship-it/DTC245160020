@@ -1,0 +1,22 @@
+{
+  "name": "expense-tracker-server",
+  "version": "1.0.0",
+  "description": "Backend RESTful API & SQLite Database cho Đề 38 - SV: Trần Mạnh Dũng (MSSV: DTC245160020)",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node src/scripts/seed.js --force",
+    "test": "node test_api.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0"
+  }
+}
