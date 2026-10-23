@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo Cáo Tổng Hợp Đề Tài 38 - Sinh viên: Trần Mạnh Dũng (DTC245160020)</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 32px 16px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .header { background: linear-gradient(135deg, #1e1b4b 0%, #1e293b 100%); border: 1px solid #4338ca; border-radius: 20px; padding: 32px; margin-bottom: 24px; text-align: center; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); }
+    .badge { display: inline-block; background: #312e81; color: #c7d2fe; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: bold; margin-bottom: 12px; letter-spacing: 0.5px; border: 1px solid #4f46e5; }
+    h1 { font-size: 26px; color: #ffffff; margin-bottom: 12px; }
+    .subtitle { color: #a5b4fc; font-size: 15px; margin-bottom: 20px; }
+    .student-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; text-align: left; }
+    .student-card { background: rgba(15, 23, 42, 0.6); padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border); }
+    .student-card .label { font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+    .student-card .val { font-size: 14px; font-weight: bold; color: #fff; margin-top: 4px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 24px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); }
+    h2 { font-size: 18px; color: #818cf8; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: #0f172a; color: #c7d2fe; font-weight: 600; }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    code { background: #0f172a; color: #38bdf8; padding: 2px 6px; border-radius: 6px; font-size: 12px; }
+    pre { background: #0f172a; color: #f1f5f9; padding: 16px; border-radius: 12px; overflow-x: auto; font-size: 13px; border: 1px solid var(--border); margin: 12px 0; }
+    .btn-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; background: var(--primary); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 10px; font-weight: 600; font-size: 14px; transition: 0.2s; }
+    .btn:hover { background: var(--primary-dark); }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: #e2e8f0; }
+    .btn-outline:hover { background: #334155; }
+    .status-pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 11px; font-weight: bold; }
+    .pill-success { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #059669; }
+    .print-note { text-align: center; margin-top: 32px; color: var(--text-muted); font-size: 12px; }
+    @media print {
+      body { background: #fff; color: #000; padding: 0; }
+      .card, .header { background: #fff; border: 1px solid #ccc; color: #000; box-shadow: none; }
+      h1, h2, .student-card .val { color: #000 !important; }
+      th { background: #f1f5f9; color: #000; }
+      .btn-group { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badge">BÀI THI KẾT THÚC HỌC PHẦN • ĐỀ SỐ 38</div>
+      <h1>HỆ THỐNG QUẢN LÝ CHI TIÊU CÁ NHÂN & PHÂN TÍCH TÀI CHÍNH</h1>
+      <p class="subtitle">Học phần: Triển khai và quản trị hệ thống phần mềm (Học kỳ 1 2026-2027)</p>
+      
+      <div class="student-grid">
+        <div class="student-card">
+          <div class="label">Họ và tên sinh viên</div>
+          <div class="val">TRẦN MẠNH DŨNG</div>
+        </div>
+        <div class="student-card">
+          <div class="label">Mã số sinh viên (MSSV)</div>
+          <div class="val" style="color: #818cf8;">DTC245160020</div>
+        </div>
+        <div class="student-card">
+          <div class="label">Lớp sinh hoạt</div>
+          <div class="val">K23.K1.KHMT K23A</div>
+        </div>
+        <div class="student-card">
+          <div class="label">STT Danh sách / Nhóm</div>
+          <div class="val" style="color: #34d399;">STT: 26 (Nhóm: 15)</div>
+        </div>
+      </div>
+
+      <div class="btn-group" style="justify-content: center; margin-top: 24px;">
+        <a href="https://github.com/dung1111-ship-it/DTC245160020" target="_blank" class="btn">🔗 GitHub MSSV: DTC245160020</a>
+        <a href="https://github.com/dung1111-ship-it/expense-tracker" target="_blank" class="btn btn-outline">📦 GitHub: expense-tracker</a>
+      </div>
+    </div>
+
+    <!-- CARD 1: CÁC DỊCH VỤ DEVOPS -->
+    <div class="card">
+      <h2>🐳 Cụm Dịch Vụ DevOps Triển Khai (Docker Compose)</h2>
+      <p style="color: var(--text-muted); font-size: 13px;">Khởi động toàn bộ 8 dịch vụ bằng 1 lệnh duy nhất: <code>docker compose up -d</code></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Dịch vụ</th>
+            <th>Cổng (Port)</th>
+            <th>Công nghệ & Vai trò</th>
+            <th>Tài khoản đăng nhập</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nginx Gateway</strong></td>
+            <td><code>80</code></td>
+            <td>Reverse Proxy, Rate limiting 15r/s, OWASP Hardening headers</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><strong>Frontend Web</strong></td>
+            <td><code>3000</code></td>
+            <td>React 18 + Vite + Tailwind + Recharts (Dashboard, Thu/Chi, Báo cáo)</td>
+            <td><code>demo_user</code> / <code>user123</code></td>
+          </tr>
+          <tr>
+            <td><strong>Backend REST API</strong></td>
+            <td><code>5000</code></td>
+            <td>Node.js Express (Non-root user), JWT Auth & RBAC, /metrics</td>
+            <td><code>admin</code> / <code>admin123</code></td>
+          </tr>
+          <tr>
+            <td><strong>PostgreSQL 16</strong></td>
+            <td><code>5432</code></td>
+            <td>Cơ sở dữ liệu chính thức, tự nạp schema & dữ liệu mẫu <code>init.sql</code></td>
+            <td><code>dung_admin</code> / <code>SecretPassword2026!</code></td>
+          </tr>
+          <tr>
+            <td><strong>pgAdmin 4</strong></td>
+            <td><code>5050</code></td>
+            <td>Giao diện quản trị PostgreSQL trực quan</td>
+            <td><code>dtc245160020@ictu.edu.vn</code> / <code>PgAdminPassword2026!</code></td>
+          </tr>
+          <tr>
+            <td><strong>Prometheus</strong></td>
+            <td><code>9090</code></td>
+            <td>Thu thập số liệu RPS, Latency p95 từ endpoint <code>/metrics</code></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><strong>Grafana</strong></td>
+            <td><code>3001</code></td>
+            <td>Dashboard giám sát hiệu năng hệ thống thời gian thực</td>
+            <td><code>admin</code> / <code>admin</code></td>
+          </tr>
+          <tr>
+            <td><strong>Loki & Promtail</strong></td>
+            <td><code>3100</code></td>
+            <td>Quản trị log tập trung, phân tích bằng ngôn ngữ <strong>LogQL</strong></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CARD 2: KIỂM THỬ TỰ ĐỘNG -->
+    <div class="card">
+      <h2>🧪 Kết Quả Kiểm Thử Tự Động (Automated Testing)</h2>
+      <p style="color: var(--text-muted); font-size: 13px;">Chạy kiểm thử: <code>npm test</code></p>
+      <div style="background: #0f172a; padding: 16px; border-radius: 12px; border: 1px solid var(--border); margin-top: 12px;">
+        <p style="color: #34d399; font-weight: bold;">✓ 29 / 29 KỊCH BẢN KIỂM THỬ PASS 100% (Thời gian chạy: ~300ms)</p>
+        <ul style="margin: 8px 0 0 20px; font-size: 13px; color: var(--text-muted);">
+          <li>Suite 1: Health Check & Exam Metadata (Khớp chính xác SV Trần Mạnh Dũng - DTC245160020)</li>
+          <li>Suite 2: Categories Management (15 danh mục, validation)</li>
+          <li>Suite 3: Wallets & Balance Calculations (Tiền mặt, Ngân hàng, MoMo)</li>
+          <li>Suite 4: Transactions CRUD & Balance Synchronization</li>
+          <li>Suite 5: Budgets & Alert Thresholds (Cảnh báo 80% & >100%)</li>
+          <li>Suite 6: Financial Analytics & Recharts feeds & CSV UTF-8 Export</li>
+          <li>Suite 7: Authentication & RBAC (PBKDF2, JWT, Chặn trái phép 401/403, Phân quyền Admin/User)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CARD 3: VẤN ĐÁP THI CỬ -->
+    <div class="card">
+      <h2>🎤 Các Câu Hỏi Vấn Đáp Phổ Biến (Kèm Câu Trả Lời Điểm A+)</h2>
+      
+      <div style="margin-bottom: 16px;">
+        <p style="font-weight: bold; color: #f8fafc;">1. Tại sao em sử dụng Nginx đứng trước Backend Node.js?</p>
+        <p style="color: var(--text-muted); font-size: 13px;">→ Nginx đóng vai trò Reverse Proxy: Định tuyến tập trung cổng 80, giải phóng tải tĩnh cho Node.js, bật Gzip nén dữ liệu, bảo mật bằng Security Headers (OWASP) và Rate Limiting 15 request/giây để chống tấn công Brute-force/DDoS.</p>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <p style="font-weight: bold; color: #f8fafc;">2. Hệ thống thu thập metrics và giám sát như thế nào?</p>
+        <p style="color: var(--text-muted); font-size: 13px;">→ Em tích hợp thư viện <code>prom-client</code> xuất ra endpoint <code>/metrics</code>. Prometheus cào định kỳ 5s lưu vào Time-Series DB, sau đó Grafana kết nối vào Prometheus để hiển thị Dashboard trực quan (RPS, Latency 95th percentile, Memory Heap).</p>
+      </div>
+
+      <div>
+        <p style="font-weight: bold; color: #f8fafc;">3. Em đã thực hiện Hardening (Gia cố bảo mật) những gì?</p>
+        <p style="color: var(--text-muted); font-size: 13px;">→ Em gia cố 3 lớp: (1) Nginx chặn iframe Clickjacking, ẩn phiên bản máy chủ; (2) Dockerfile chuyển quyền sang <code>USER node</code> non-root; (3) CSDL PostgreSQL chạy trong mạng ảo cách ly <code>expense_net</code>, cấu hình phân quyền và tường lửa UFW.</p>
+      </div>
+    </div>
+
+    <div class="print-note">
+      Bản báo cáo kỹ thuật chính thức phục vụ chấm thi Học phần Triển khai và quản trị hệ thống phần mềm • 2026
+    </div>
+  </div>
+</body>
+</html>
