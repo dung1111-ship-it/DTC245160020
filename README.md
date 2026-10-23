@@ -43,56 +43,62 @@ Hệ thống đã nạp sẵn 2 tài khoản thử nghiệm với đầy đủ q
 
 ---
 
-## 🏗️ KIẾN TRÚC HỆ THỐNG (SYSTEM ARCHITECTURE)
+## 🏗️ KIẾN TRÚC HỆ THỐNG DEVOPS & DOCKER COMPOSE (ĐỀ 38)
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│                        FRONTEND CLIENT (PORT 3000)                     │
-│  React 18 + Vite + Tailwind CSS + Lucide Icons + Recharts Analytics   │
-│  - Dashboard View (KPIs, Wallets, Recent Txns)                         │
-│  - Transactions View (FilterBar, Pagination, Modal CRUD)               │
-│  - Categories View (Icon Picker, Color Palette)                        │
-│  - Budgets View (Progress Bars, Alert Thresholds 80%/100%)             │
-│  - Reports View (Doughnut Chart, Bar Trends, CSV/PDF Export)           │
-│  - Exam Modal (Thông tin SV Trần Mạnh Dũng - DTC245160020)             │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │ HTTP / RESTful API (JSON)
+                            INTERNET / CLIENTS
+                                    │
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│                        BACKEND SERVER (PORT 5000)                      │
-│  Node.js + Express REST API (Mô hình 3 lớp)                            │
-│  - Routers: /transactions, /budgets, /analytics, /categories, /wallets │
-│  - Controllers & Middlewares: Validator, Logger, Error Handler         │
-│  - Seed Engine: 3 tháng dữ liệu mẫu (T8 - T10/2026)                    │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │ SQL Engine
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│                        DATABASE LAYER (SQLITE)                         │
-│  File CSDL vật lý: server/database/expense_tracker.sqlite              │
-│  - Chế độ WAL (Write-Ahead Logging) hiệu năng cao                      │
-│  - Ràng buộc toàn vẹn khóa ngoại (Foreign Keys Enforcement)            │
-│  - Bảo toàn số dư ví (Balance Conservation Invariant)                  │
-└────────────────────────────────────────────────────────────────────────┘
+│               NGINX REVERSE PROXY & HARDENING (PORT 80)                │
+│  - Rate Limiting: 15 req/s (API), 5 req/s (Auth Brute-force protect)   │
+│  - Security Headers: OWASP CSP, X-Frame-Options DENY, XSS-Protection   │
+│  - Log format JSON -> Promtail -> Grafana Loki                         │
+└───────────────────┬────────────────────────────────┬───────────────────┘
+                    │                                │
+         / (Frontend static/SPA)              /api (REST API)
+                    │                                │
+                    ▼                                ▼
+┌───────────────────────────────┐  ┌─────────────────────────────────────┐
+│    FRONTEND (PORT 3000)       │  │     BACKEND API (PORT 5000)         │
+│  React 18 + Vite + Recharts   │  │  Node.js + Express (Non-root user)  │
+│  Dashboard & User/Admin Panel │  │  JWT + PBKDF2 Auth & RBAC           │
+└───────────────────────────────┘  │  Endpoint Prometheus: /metrics      │
+                                   └──────────────────┬──────────────────┘
+                                                      │
+                       ┌──────────────────────────────┴──────────────────────────────┐
+                       │                                                             │
+                       ▼                                                             ▼
+┌───────────────────────────────────────────────┐  ┌─────────────────────────────────────────────────┐
+│     POSTGRESQL 16 (PORT 5432)                 │  │       CỤM GIÁM SÁT & LOGGING (OBSERVABILITY)    │
+│  - CSDL chính thức cho Đề 38                  │  │  - Prometheus (Port 9090): Cào metrics Backend  │
+│  - Tự động nạp schema & dữ liệu: init.sql     │  │  - Grafana (Port 3001): Dashboard giám sát trực │
+│  - pgAdmin 4 (Port 5050): Quản trị trực quan  │  │  - Loki (Port 3100) + Promtail: Quản trị LogQL  │
+└───────────────────────────────────────────────┘  └─────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🚀 HƯỚNG DẪN KHỞI CHẠY (1-CLICK RUN)
+## 🚀 HƯỚNG DẪN KHỞI CHẠY (2 PHƯƠNG THỨC)
 
-### Cách 1: Khởi động nhanh bằng file script (Khuyên dùng khi đi thi)
-Chỉ cần nhấp đúp chuột vào file:
-```
-start.bat
-```
-Hệ thống sẽ tự động khởi chạy song song cả máy chủ Backend và giao diện Frontend!
-
-### Cách 2: Khởi động bằng dòng lệnh Terminal
-Tại thư mục gốc dự án (`expense_tracker`):
+### 🐳 Cách 1: Triển khai toàn bộ cụm DevOps bằng Docker Compose (Khuyên dùng khi chấm thi)
+Chỉ cần chạy 1 câu lệnh duy nhất tại thư mục dự án:
 ```bash
-npm start
+docker compose up -d
+```
+Hệ thống sẽ tự động tải, cấu hình và kích hoạt toàn bộ 7 dịch vụ:
+* **Ứng dụng Web (Nginx Gateway):** [http://localhost](http://localhost) (hoặc [http://localhost:3000](http://localhost:3000))
+* **Backend REST API:** [http://localhost:5000](http://localhost:5000)
+* **Prometheus Metrics:** [http://localhost:9090](http://localhost:9090)
+* **Grafana Monitoring Dashboard:** [http://localhost:3001](http://localhost:3001) *(Tài khoản: `admin` / `admin`)*
+* **pgAdmin 4 (Quản trị PostgreSQL):** [http://localhost:5050](http://localhost:5050) *(Tài khoản: `dtc245160020@ictu.edu.vn` / `PgAdminPassword2026!`)*
+
+### 💻 Cách 2: Khởi động nhanh không cần Docker (Chạy trực tiếp trên Windows)
+Dành cho máy tính cá nhân hoặc phòng máy không cài sẵn Docker Desktop:
+```bash
+start.bat
 # hoặc
-npm run dev
+npm start
 ```
 
 ### Các đường dẫn truy cập:

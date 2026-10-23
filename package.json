@@ -12,7 +12,10 @@
     "build:client": "cd client && npm run build",
     "test": "cd server && node test_api.js",
     "seed": "cd server && node src/scripts/seed.js",
-    "slides": "start slides/index.html"
+    "slides": "start slides/index.html",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f"
   },
   "keywords": [
     "expense-tracker",

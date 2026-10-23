@@ -8,6 +8,7 @@ const cors = require('cors');
 const env = require('./config/env');
 const { requestLogger } = require('./middleware/logger');
 const { notFoundHandler, errorHandler } = require('./middleware/errorHandler');
+const { register, metricsMiddleware } = require('./utils/metrics');
 const apiRouter = require('./routes/api');
 
 const app = express();
@@ -23,8 +24,19 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// 3. Ghi log Request
+// 3. Ghi log Request & Thu thập Prometheus Metrics
 app.use(requestLogger);
+app.use(metricsMiddleware);
+
+// Endpoint xuất Metrics chuẩn Prometheus phục vụ Grafana (Môn Triển khai hệ thống)
+app.get('/metrics', async (req, res) => {
+  try {
+    res.set('Content-Type', register.contentType);
+    res.end(await register.metrics());
+  } catch (err) {
+    res.status(500).end(err.message);
+  }
+});
 
 // Endpoint trang chủ Backend (Hỗ trợ mở trực tiếp trên trình duyệt)
 app.get('/', (req, res) => {

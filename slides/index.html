@@ -268,49 +268,55 @@
           <span class="text-xs text-slate-500 font-mono">Slide 04 / 15</span>
         </div>
 
-        <div class="my-auto space-y-3">
-          <!-- Tier 1: Client -->
-          <div class="bg-indigo-950/30 border border-indigo-500/30 rounded-xl p-3 flex items-center justify-between">
+        <div class="my-auto space-y-2.5">
+          <!-- Gateway: Nginx -->
+          <div class="bg-purple-950/30 border border-purple-500/40 rounded-xl p-2.5 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 rounded bg-indigo-600 text-white font-bold text-xs">TẦNG 1</span>
+              <span class="px-2 py-0.5 rounded bg-purple-600 text-white font-bold text-[11px]">GATEWAY</span>
               <div>
-                <h4 class="text-sm font-bold text-white">Frontend Client (Presentation Layer) — Port 3000</h4>
-                <p class="text-xs text-slate-400">React 18 • Vite 5 • Tailwind CSS • Lucide Icons • Recharts</p>
+                <h4 class="text-xs font-bold text-white">Nginx Reverse Proxy & Hardening — Port 80</h4>
+                <p class="text-[11px] text-slate-400">Rate Limiting 15r/s • Security Headers OWASP • Cân bằng tải • Định tuyến /api & static</p>
               </div>
             </div>
-            <span class="text-xs text-indigo-400 font-mono">SPA • Single Page App</span>
+            <span class="text-[11px] text-purple-300 font-mono">Edge Proxy</span>
           </div>
 
-          <div class="flex justify-center text-slate-500 text-xs">
-            ▲▼ HTTP Request / RESTful JSON Response (Axios & Fetch API)
+          <!-- Tier 1: Client & Server -->
+          <div class="grid grid-cols-2 gap-2">
+            <div class="bg-indigo-950/30 border border-indigo-500/30 rounded-xl p-2.5">
+              <span class="px-1.5 py-0.5 rounded bg-indigo-600 text-white font-bold text-[10px]">FRONTEND</span>
+              <h5 class="text-xs font-bold text-white mt-1">React 18 + Recharts (Port 3000)</h5>
+              <p class="text-[10px] text-slate-400">Tailwind CSS • Auth Modal • Admin Panel</p>
+            </div>
+            <div class="bg-sky-950/30 border border-sky-500/30 rounded-xl p-2.5">
+              <span class="px-1.5 py-0.5 rounded bg-sky-600 text-white font-bold text-[10px]">BACKEND</span>
+              <h5 class="text-xs font-bold text-white mt-1">Node.js Express (Port 5000)</h5>
+              <p class="text-[10px] text-slate-400">JWT + PBKDF2 • Endpoint /metrics Prometheus</p>
+            </div>
           </div>
 
-          <!-- Tier 2: Server -->
-          <div class="bg-sky-950/30 border border-sky-500/30 rounded-xl p-3 flex items-center justify-between">
+          <!-- Tier 2: Database -->
+          <div class="bg-emerald-950/30 border border-emerald-500/30 rounded-xl p-2.5 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 rounded bg-sky-600 text-white font-bold text-xs">TẦNG 2</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-600 text-white font-bold text-[11px]">DATABASE</span>
               <div>
-                <h4 class="text-sm font-bold text-white">Backend Server (Application Layer) — Port 5000</h4>
-                <p class="text-xs text-slate-400">Node.js Express • Router • Controllers • Middlewares (Logger, Validator, ErrorHandler)</p>
+                <h4 class="text-xs font-bold text-white">PostgreSQL 16 & pgAdmin 4 (Port 5432 & 5050)</h4>
+                <p class="text-[11px] text-slate-400">Tự động nạp `init.sql` • ACID Transactions • SQLite Fallback an toàn</p>
               </div>
             </div>
-            <span class="text-xs text-sky-400 font-mono">RESTful API Engine</span>
+            <span class="text-[11px] text-emerald-400 font-mono">Postgres + pgAdmin</span>
           </div>
 
-          <div class="flex justify-center text-slate-500 text-xs">
-            ▲▼ SQL Query Execution & ACID Transactions
-          </div>
-
-          <!-- Tier 3: Database -->
-          <div class="bg-emerald-950/30 border border-emerald-500/30 rounded-xl p-3 flex items-center justify-between">
+          <!-- Tier 3: Observability -->
+          <div class="bg-amber-950/30 border border-amber-500/30 rounded-xl p-2.5 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 rounded bg-emerald-600 text-white font-bold text-xs">TẦNG 3</span>
+              <span class="px-2 py-0.5 rounded bg-amber-600 text-white font-bold text-[11px]">MONITORING</span>
               <div>
-                <h4 class="text-sm font-bold text-white">Database Layer (Data Storage) — SQLite WAL Mode</h4>
-                <p class="text-xs text-slate-400">File CSDL vật lý `expense_tracker.sqlite` • Khóa ngoại Foreign Keys • Ghi log song song</p>
+                <h4 class="text-xs font-bold text-white">Prometheus + Grafana + Loki + Promtail</h4>
+                <p class="text-[11px] text-slate-400">Giám sát RPS, Latency p95 • Dashboard trực quan • Thu thập Log & LogQL</p>
               </div>
             </div>
-            <span class="text-xs text-emerald-400 font-mono">Persistent Storage</span>
+            <span class="text-[11px] text-amber-300 font-mono">Prom + Grafana + Loki</span>
           </div>
         </div>
 

@@ -1,0 +1,35 @@
+# ====================================================================
+# PROMTAIL LOG COLLECTOR CONFIGURATION FOR EXPENSE TRACKER (ĐỀ 38)
+# Sinh viên: Trần Mạnh Dũng | MSSV: DTC245160020
+# ====================================================================
+
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  # 1. Thu thập Access Log & Error Log của Nginx Reverse Proxy
+  - job_name: nginx-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: nginx
+          service: reverse-proxy
+          __path__: /var/log/nginx/*log
+
+  # 2. Thu thập Log của Backend Express
+  - job_name: backend-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: backend
+          service: expense-tracker-api
+          __path__: /var/log/backend/*log

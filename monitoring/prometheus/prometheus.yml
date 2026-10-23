@@ -1,0 +1,26 @@
+# ====================================================================
+# PROMETHEUS CONFIGURATION FOR EXPENSE TRACKER (ĐỀ 38)
+# Sinh viên: Trần Mạnh Dũng | MSSV: DTC245160020
+# ====================================================================
+
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+  external_labels:
+    monitor: 'expense-tracker-monitor'
+    student: 'TranManhDung_DTC245160020'
+
+scrape_configs:
+  # 1. Thu thập metrics của Backend Node.js
+  - job_name: 'expense-tracker-backend'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['backend:5000']
+        labels:
+          app: 'expense-tracker-backend'
+          env: 'production'
+
+  # 2. Thu thập metrics của chính Prometheus
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
